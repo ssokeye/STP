@@ -1,0 +1,41 @@
+Table: Members
+Member_Id
+Family_Id	 
+First_Name
+Middle_Name
+Last_Name
+Birth_Date
+Gender	 
+Address1
+Address2
+City
+State
+Zip	
+Home_Phone
+Cell_Phone
+Work_Phone
+Email_Address
+Date_Joined
+Worker_Ind
+Married_Status 
+Is_Member_Status
+Member_Class
+Family_Class (Parent/Children)
+
+Table: Member_Department
+Member_Id
+Dept_Id
+Status
+
+Table: Department
+Dept_ID
+Dept_Name
+Dept_HOD
+
+
+
+CDC fields: Change Data Capture for all tables
+Created_By
+Date_Created
+Modified_By
+Date_Modified
