@@ -1,0 +1,13 @@
+#Here we are overriding the django core template base_site.html
+#with our own version of base_site.html
+ 
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Membership Site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' 
+%}">Membership Site administration</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

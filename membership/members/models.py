@@ -31,7 +31,8 @@ class Members(models.Model):
 	Date_Created = models.DateTimeField(default=datetime.now)
 	Modified_By = models.CharField(max_length=30)
 	last_Modified = models.DateTimeField(default=datetime.now)
-
+	def __str__(self):
+		return self.First_Name
 #Church Departments
 class Departments(models.Model):
 	Dept_Id = models.AutoField(primary_key=True)
@@ -41,6 +42,8 @@ class Departments(models.Model):
 	Date_Created = models.DateTimeField(default=datetime.now)
 	Modified_By = models.CharField(max_length=30)
 	last_Modified =models.DateTimeField(default=datetime.now)
+	def __str__(self):
+		return self.Dept_Name
 
 #Members belonging to a Departments
 class Member_Department(models.Model):
@@ -61,7 +64,8 @@ class Training(models.Model):
 	Date_Created = models.DateTimeField(default=datetime.now)
 	Modified_By = models.CharField(max_length=30)
 	last_Modified = models.DateTimeField(default=datetime.now)
-
+	def __str__(self):
+		return self.Training_Name
 #Members Training
 class Member_Training(models.Model):
 	Member_Id = models.ForeignKey('Members')
