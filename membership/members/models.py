@@ -4,7 +4,7 @@ from datetime import date, datetime
 # Create your models here.
 
 #Church Members
-class Members(models.Model):
+class Member(models.Model):
 	Member_Id = models.AutoField(primary_key=True)
 	Family_Id = models.IntegerField #(primary_key=False)
 	First_Name = models.CharField(max_length=30)
@@ -33,8 +33,9 @@ class Members(models.Model):
 	last_Modified = models.DateTimeField(default=datetime.now)
 	def __str__(self):
 		return self.First_Name
+
 #Church Departments
-class Departments(models.Model):
+class Department(models.Model):
 	Dept_Id = models.AutoField(primary_key=True)
 	Dept_Name = models.CharField(max_length=100) 
 	Dept_HOD = models.CharField(max_length=100) 
@@ -47,8 +48,8 @@ class Departments(models.Model):
 
 #Members belonging to a Departments
 class Member_Department(models.Model):
-	Member_Id = models.ForeignKey('Members')
-	Dept_Id = models.ForeignKey('Departments')
+	Member_Id = models.ForeignKey('Member')
+	Dept_Id = models.ForeignKey('Department')
 	Status = models.CharField(max_length = 10)
 	Created_By = models.CharField(max_length=30)
 	Date_Created = models.DateTimeField(default=datetime.now)
@@ -68,6 +69,6 @@ class Training(models.Model):
 		return self.Training_Name
 #Members Training
 class Member_Training(models.Model):
-	Member_Id = models.ForeignKey('Members')
+	Member_Id = models.ForeignKey('Member')
 	Training_Id = models.ForeignKey('Training')
 	Date_Completed = models.DateField(default=date.today)
